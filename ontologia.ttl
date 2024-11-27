@@ -1,0 +1,213 @@
+@prefix : <http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica> .
+
+<http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica> rdf:type owl:Ontology ;
+                                                                           <http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion> "1.2" ;
+                                                                           rdfs:comment "Ontologia de la practica" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion
+<http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion> rdf:type owl:AnnotationProperty ;
+                                                                   rdfs:label "has_obo_format_version" .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#id
+<http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty ;
+                                                  rdfs:label "id" .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#alberga_Obra
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#alberga_Obra> rdf:type owl:ObjectProperty ;
+                                                                                                                      rdfs:domain <http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Sala> ;
+                                                                                                                      rdfs:range <http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#ObraDeArte> ;
+                                                                                                                      <http://www.geneontology.org/formats/oboInOwl#id> "alberga_Obra" .
+
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#contenedor_de
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#contenedor_de> rdf:type owl:ObjectProperty ;
+                                                                                                                       rdfs:domain <http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Museo> ;
+                                                                                                                       rdfs:range <http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Sala> ;
+                                                                                                                       <http://www.geneontology.org/formats/oboInOwl#id> "contenedor_de" .
+
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#pertenece_a
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#pertenece_a> rdf:type owl:ObjectProperty ,
+                                                                                                                              owl:FunctionalProperty ;
+                                                                                                                     rdfs:domain <http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#ObraDeArte> ;
+                                                                                                                     rdfs:range <http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Exposicion> ;
+                                                                                                                     <http://www.geneontology.org/formats/oboInOwl#id> "pertenece_a" .
+
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#visitante_de
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#visitante_de> rdf:type owl:ObjectProperty ;
+                                                                                                                      rdfs:domain <http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Visitante> ;
+                                                                                                                      rdfs:range <http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Museo> ;
+                                                                                                                      <http://www.geneontology.org/formats/oboInOwl#id> "visitante_de" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#autor
+:autor rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :ObraDeArte ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#añoCreacion
+:añoCreacion rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :ObraDeArte ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#complejidad
+:complejidad rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :ObraDeArte ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#conocimiento
+:conocimiento rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Visitante ;
+              rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#cronologia
+:cronologia rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Exposicion ;
+            rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#dimensiones
+:dimensiones rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :ObraDeArte ;
+             rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#duracion
+:duracion rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Visitante ;
+          rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#epoca
+:epoca rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :ObraDeArte ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#estilo
+:estilo rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :ObraDeArte ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#numDias
+:numDias rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Visitante ;
+         rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#preferencias
+:preferencias rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Visitante ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#relevancia
+:relevancia rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :ObraDeArte ;
+            rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#tematica
+:tematica rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Exposicion ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#tipo
+:tipo rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Visitante ;
+      rdfs:range xsd:integer .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:range xsd:unsignedInt .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Exposicion
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Exposicion> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Museo
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Museo> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#ObraDeArte
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#ObraDeArte> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Sala
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Sala> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Visitante
+<http://purl.obolibrary.org/obo/http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Visitante> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Exposicion
+:Exposicion rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#ObraDeArte
+:ObraDeArte rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/natinat/ontologies/2024/10/ontologiaPractica#Visitante
+:Visitante rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
