@@ -131,6 +131,151 @@
 ;--MÓDULO DE ABSTRACCION--
 ;-------------------------
 
+(defmodule ABSTRACCION (import PREGUNTAS ?ALL) (export ?ALL))
+
+(deftemplate VisitanteAbstraido
+    (slot tiempoTotalVisita (type INTEGER)) ; Tiempo total disponible calculado (días * (horas diarias - descanso diario))
+    (slot nivelArte (type STRING)) ; Principiante, Intermedio, Avanzado
+    (slot tipoGrupoAbstracto (type STRING)) ; Solo, Familia, Grupo pequeño, Grupo grande
+    (slot tipoVisitaAbstracto (type STRING)) ; Autor, Época, Temática
+    (multislot epocasPreferidas (type STRING)) ; Épocas con alta preferencia (>= 7)
+    (multislot tematicasPreferidas (type STRING)) ; Temáticas con alta preferencia (>= 7)
+    (multislot autoresPreferidos (type STRING)) ; Autores con alta preferencia (>= 7)
+    (slot relevanciaInteresAbstracta (type STRING)) ; Poco conocidas, Conocidas, Famosas
+)
+
+(defrule procesarCliente "Procesar la información del cliente para generar una abstracción"
+    (Cliente
+        (diasVisita ?dias)
+        (horasDiarias ?horas)
+        (tipoGrupo ?tipogrupo)
+        (conocimientoArte ?nivel)
+        (tipoVisita ?tipo)
+        (relevanciaInteresante ?fama)
+        (descansoDiario ?descanso)
+        (interesEpocas $?epocas)
+        (interesTematicas $?tematicas)
+        (interesAutores $?autores)
+        (justificacionRespuesta ?justi)
+    )
+    =>
+    ; Convertir valores numéricos en representaciones simbólicas
+    (bind ?tiempoTotal (* ?dias (- ?horas ?descanso)))
+
+    (bind ?tipoGrupoAbstracto
+        (if (= ?tipogrupo 1) then "Solo"
+        else (if (= ?tipogrupo 2) then "Familia" 
+        else (if (= ?tipogrupo 3) then "Grupo pequeño" else "Grupo grande")))
+    )
+
+    (bind ?nivelArte
+        (if (= ?nivel 1) then "Principiante"
+        else (if (= ?nivel 2) then "Intermedio" else "Avanzado"))
+    )
+
+    (bind ?tipoVisitaAbstracto
+        (if (= ?tipo 1) then "Autor"
+        else (if (= ?tipo 2) then "Época" else "Temática"))
+    )
+
+    (bind ?relevanciaInteresAbstracta
+        (if (= ?fama 1) then "Poco conocidas"
+        else (if (= ?fama 2) then "Conocidas" else "Famosas"))
+    )
+
+    ; Filtrar épocas preferidas (>= 7)
+    (bind ?epocasPreferidas (create$))
+    (bind ?index 1)
+    (foreach ?valor $?epocas
+        (if (>= ?valor 7) then
+            (bind ?epocasPreferidas (create$ ?epocasPreferidas (switch ?index
+                (case 1 then "Academicismo")
+                (case 2 then "Barroco")
+                (case 3 then "Cubismo")
+                (case 4 then "Expresionismo")
+                (case 5 then "Fauvismo")
+                (case 6 then "Impresionismo")
+                (case 7 then "Manierismo")
+                (case 8 then "Modernismo")
+                (case 9 then "Neoclasicismo")
+                (case 10 then "Postimpresionismo")
+                (case 11 then "Realismo")
+                (case 12 then "Renacimiento")
+                (case 13 then "Romanticismo")
+                (case 14 then "Simbolismo")
+                (default "Surrealismo")))))
+        (bind ?index (+ ?index 1)))
+
+    ; Filtrar temáticas preferidas (>= 7)
+    (bind ?tematicasPreferidas (create$))
+    (bind ?index 1)
+    (foreach ?valor $?tematicas
+        (if (>= ?valor 7) then
+            (bind ?tematicasPreferidas (create$ ?tematicasPreferidas (switch ?index
+                (case 1 then "Abstracta")
+                (case 2 then "Costumbrista")
+                (case 3 then "Histórica")
+                (case 4 then "Mitológica")
+                (case 5 then "Naturaleza Muerta")
+                (case 6 then "Paisaje")
+                (case 7 then "Religiosa")
+                (default "Retrato")))))
+        (bind ?index (+ ?index 1)))
+
+    ; Filtrar autores preferidos (>= 7)
+    (bind ?autoresPreferidos (create$))
+    (bind ?index 1)
+    (foreach ?valor $?autores
+        (if (>= ?valor 7) then
+            (bind ?autoresPreferidos (create$ ?autoresPreferidos (switch ?index
+                (case 1 then "Claude Monet")
+                (case 2 then "Diego Velázquez")
+                (case 3 then "El Greco")
+                (case 4 then "Francisco de Goya")
+                (case 5 then "Johannes Vermeer")
+                (case 6 then "Leonardo da Vinci")
+                (case 7 then "Pablo Picasso")
+                (case 8 then "Paul Cézanne")
+                (case 9 then "Salvador Dalí")
+                (default "Vincent van Gogh")))))
+        (bind ?index (+ ?index 1)))
+
+
+    ; Crear la abstracción del visitante
+    (assert
+        (VisitanteAbstraido
+            (tiempoTotalVisita ?tiempoTotal)
+            (nivelArte ?nivelArte)
+            (tipoGrupoAbstracto ?tipoGrupoAbstracto)
+            (tipoVisitaAbstracto ?tipoVisitaAbstracto)
+            (epocasPreferidas ?epocasPreferidas)
+            (tematicasPreferidas ?tematicasPreferidas)
+            (autoresPreferidos ?autoresPreferidos)
+            (relevanciaInteresAbstracta ?relevanciaInteresAbstracta)
+        )
+    )
+
+    (if (eq ?justi 1)
+        then
+        (printout t "Información abstraida del usuario: " crlf)
+        (printout t "Tiempo total de la visita (minutos): " ?tiempoTotal crlf)
+        (printout t "Nivel arte: " ?nivelArte crlf)
+        (printout t "Tipo de grupo: " ?tipoGrupoAbstracto crlf)
+        (printout t "Tipo de visita: " ?tipoVisitaAbstracto crlf)
+        (printout t "Épocas preferidas: " crlf)
+        (foreach ?epoca $?epocasPreferidas (printout t ?epoca " ") crlf)
+        (printout t crlf)
+        (printout t "Temáticas preferidas: " crlf)
+        (foreach ?tema $?tematicasPreferidas (printout t ?tema " ") crlf)
+        (printout t crlf)
+        (printout t "Autores preferidos: " crlf)
+        (foreach ?autor $?autoresPreferidos (printout t ?autor " ") crlf)
+        (printout t crlf "Nivel de relevancia deseado: " ?relevanciaInteresAbstracta crlf)
+    )
+
+    (printout t "Abstracción del visitante creada correctamente." crlf crlf)
+    (focus ASOCIACION)
+)
 
 
 ;------------------------
