@@ -332,6 +332,419 @@
 ;--------------------------
 
 
+(defmodule REFINAMIENTO (import ASOCIACION ?ALL) (export ?ALL))
+
+(deftemplate ProgramacionObras
+    (multislot obrasRecomendadasDia1 (type STRING))
+    (slot duracionVisitaDia1 (default 0))
+    (multislot obrasRecomendadasDia2 (type STRING))
+    (slot duracionVisitaDia2 (default 0))
+    (multislot obrasRecomendadasDia3 (type STRING))
+    (slot duracionVisitaDia3 (default 0))
+    (multislot obrasRecomendadasDia4 (type STRING))
+    (slot duracionVisitaDia4 (default 0))
+    (multislot obrasRecomendadasDia5 (type STRING))
+    (slot duracionVisitaDia5 (default 0))
+    (multislot obrasRecomendadasDia6 (type STRING))
+    (slot duracionVisitaDia6 (default 0))
+    (multislot obrasRecomendadasDia7 (type STRING))
+    (slot duracionVisitaDia7 (default 0))
+    (multislot obrasRecomendadasDia8 (type STRING))
+    (slot duracionVisitaDia8 (default 0))
+    (multislot obrasRecomendadasDia9 (type STRING))
+    (slot duracionVisitaDia9 (default 0))
+    (multislot obrasRecomendadasDia10 (type STRING))
+    (slot duracionVisitaDia10 (default 0))
+)
+
+
+(defrule REFINAMIENTO::refinarRelevanciaObra
+   "Ajusta las obras sugeridas según la relevancia deseada por el visitante"
+   (declare (salience 80))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelInteres))
+   ?obra <- (ObraAbstraida (autor ?autor) (relevancia ?relevancia))
+   =>
+   (if (and (eq ?nivelInteres "Poco conocidas") (< ?relevancia 2))
+      then
+         (printout t "Obra con relevancia ajustada: " crlf)
+         (printout t "Autor: " ?autor ", Relevancia Ajustada: Poco Conocidas" crlf)
+   )
+   (if (and (eq ?nivelInteres "Conocidas") (= ?relevancia 2))
+      then
+         (printout t "Obra con relevancia ajustada: " crlf)
+         (printout t "Autor: " ?autor ", Relevancia Ajustada: Conocidas" crlf)
+   )
+   (if (and (eq ?nivelInteres "Famosas") (= ?relevancia 3))
+      then
+         (printout t "Obra con relevancia ajustada: " crlf)
+         (printout t "Autor: " ?autor ", Relevancia Ajustada: Famosas" crlf)
+   )
+)
+
+
+(defrule primerasRecomendacionesDia1
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia1 $?obrasDia1)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia1 ?autor)))
+)
+
+(defrule añadirObrasDia1
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia1 $?obrasDia1)
+                                (duracionVisitaDia1 ?duracionVisitaDia1))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia1 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia1 $?obrasDia1 ?autor)
+                                    (duracionVisitaDia1 (+ ?duracionVisitaDia1 ?relevancia))))
+         (printout t "Añadiendo obra al Día 1: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia2
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia2 $?obrasDia2)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia2 ?autor)))
+)
+
+(defrule añadirObrasDia2
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia2 $?obrasDia2)
+                                (duracionVisitaDia2 ?duracionVisitaDia2))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia2 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia2 $?obrasDia2 ?autor)
+                                    (duracionVisitaDia2 (+ ?duracionVisitaDia2 ?relevancia))))
+         (printout t "Añadiendo obra al Día 2: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia3
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia3 $?obrasDia3)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia3 ?autor)))
+)
+
+(defrule añadirObrasDia3
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia3 $?obrasDia3)
+                                (duracionVisitaDia3 ?duracionVisitaDia3))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia3 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia3 $?obrasDia3 ?autor)
+                                    (duracionVisitaDia3 (+ ?duracionVisitaDia3 ?relevancia))))
+         (printout t "Añadiendo obra al Día 3: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia4
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia4 $?obrasDia4)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia4 ?autor)))
+)
+
+(defrule añadirObrasDia4
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia4 $?obrasDia4)
+                                (duracionVisitaDia4 ?duracionVisitaDia4))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia4 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia4 $?obrasDia4 ?autor)
+                                    (duracionVisitaDia4 (+ ?duracionVisitaDia4 ?relevancia))))
+         (printout t "Añadiendo obra al Día 4: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia5
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia5 $?obrasDia5)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia5 ?autor)))
+)
+
+(defrule añadirObrasDia5
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia5 $?obrasDia5)
+                                (duracionVisitaDia5 ?duracionVisitaDia5))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia5 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia5 $?obrasDia5 ?autor)
+                                    (duracionVisitaDia5 (+ ?duracionVisitaDia5 ?relevancia))))
+         (printout t "Añadiendo obra al Día 5: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia6
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia6 $?obrasDia6)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia6 ?autor)))
+)
+
+(defrule añadirObrasDia6
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia6 $?obrasDia6)
+                                (duracionVisitaDia6 ?duracionVisitaDia6))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia6 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia6 $?obrasDia6 ?autor)
+                                    (duracionVisitaDia6 (+ ?duracionVisitaDia6 ?relevancia))))
+         (printout t "Añadiendo obra al Día 6: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia7
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia7 $?obrasDia7)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia7 ?autor)))
+)
+
+(defrule añadirObrasDia7
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia7 $?obrasDia7)
+                                (duracionVisitaDia7 ?duracionVisitaDia7))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia7 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia7 $?obrasDia7 ?autor)
+                                    (duracionVisitaDia7 (+ ?duracionVisitaDia7 ?relevancia))))
+         (printout t "Añadiendo obra al Día 7: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia8
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia8 $?obrasDia8)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia8 ?autor)))
+)
+
+(defrule añadirObrasDia8
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia8 $?obrasDia8)
+                                (duracionVisitaDia8 ?duracionVisitaDia8))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia8 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia8 $?obrasDia8 ?autor)
+                                    (duracionVisitaDia8 (+ ?duracionVisitaDia8 ?relevancia))))
+         (printout t "Añadiendo obra al Día 8: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia9
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia9 $?obrasDia9)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia9 ?autor)))
+)
+
+(defrule añadirObrasDia9
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia9 $?obrasDia9)
+                                (duracionVisitaDia9 ?duracionVisitaDia9))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia9 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia9 $?obrasDia9 ?autor)
+                                    (duracionVisitaDia9 (+ ?duracionVisitaDia9 ?relevancia))))
+         (printout t "Añadiendo obra al Día 9: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+(defrule primerasRecomendacionesDia10
+   (declare (salience 51))
+   (not (ProgramacionObras (obrasRecomendadasDia10 $?obrasDia10)))
+   (VisitanteAbstraido (relevanciaInteresAbstracta ?nivelRelevancia))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia&:(eq ?relevancia (if (eq ?nivelRelevancia "Poco conocidas") then 1 else
+                                                          (if (eq ?nivelRelevancia "Conocidas") then 2 else 3)))))
+   =>
+   (assert (ProgramacionObras (obrasRecomendadasDia10 ?autor)))
+)
+
+(defrule añadirObrasDia10
+   (declare (salience 50))
+   ?cliente <- (Cliente (horasDiarias ?horas) (descansoDiario ?descanso))
+   ?prog <- (ProgramacionObras (obrasRecomendadasDia10 $?obrasDia10)
+                                (duracionVisitaDia10 ?duracionVisitaDia10))
+   ?obra <- (ObraAbstraida
+              (autor ?autor)
+              (relevancia ?relevancia)
+              (anio ?anio)
+              (epoca ?epoca)
+              (estilo ?estilo)
+              (tematica ?tematica)
+              (dimensiones ?dimensiones))
+   =>
+   (bind ?tiempoDisponibleDia (- ?horas ?descanso))
+   (if (< (+ ?duracionVisitaDia10 ?relevancia) ?tiempoDisponibleDia)
+      then
+         (assert (ProgramacionObras (obrasRecomendadasDia10 $?obrasDia10 ?autor)
+                                    (duracionVisitaDia10 (+ ?duracionVisitaDia10 ?relevancia))))
+         (printout t "Añadiendo obra al Día 10: " ?autor ", relevancia: " ?relevancia crlf)
+   )
+)
+
+
+
+
+(defrule finalRefinamiento
+    "Indica la finalización del módulo de refinamiento"
+    (declare (salience 50))
+    =>
+    (printout t "El refinamiento se ha completado." crlf)
+    (focus RESPUESTA)
+)
+
+
+
 ;-----------------------
 ;--MÓDULO DE RESPUESTA--
 ;-----------------------
