@@ -145,6 +145,7 @@
 )
 
 (defrule procesarCliente "Procesar la información del cliente para generar una abstracción"
+    (declare (salience 99))
     (Cliente
         (diasVisita ?dias)
         (horasDiarias ?horas)
@@ -281,6 +282,49 @@
 ;------------------------
 ;--MÓDULO DE ASOCIACION--
 ;------------------------
+
+(defmodule ASOCIACION (import ABSTRACCION ?ALL) (export ?ALL))
+
+(deftemplate ObraAbstraida
+    (slot autor (type STRING))
+    (slot epoca (type STRING))
+    (slot anio (type INTEGER))
+    (slot estilo (type STRING))
+    (slot tematica (type STRING))
+    (slot dimensiones (type STRING))
+    (slot sala (type INTEGER))
+    (slot relevancia (type INTEGER))
+)
+
+(defrule assertObras
+    (declare (salience 85))
+    (VisitanteAbstraido)
+    =>
+    (assert (ObraAbstraida))
+)
+
+(defrule ajustarRelevanciaObra
+    (declare (salience 84))
+    (VisitanteAbstraido (relevanciaInteresAbstracta ?interes))
+    ?obra <- (ObraAbstraida (relevancia ?relevancia&:(eq ?relevancia -1)))
+    =>
+    (switch ?interes
+        (case "Poco Conocidas" then
+            (modify ?obra (relevancia 1)))
+        (case "Conocidas" then
+            (modify ?obra (relevancia 2)))
+        (case "Famosas" then
+            (modify ?obra (relevancia 3)))
+    )
+)
+
+
+
+(defrule pasoRefinamiento
+    (declare (salience 81))
+    =>
+    (focus REFINAMIENTO)
+)
 
 
 ;--------------------------
