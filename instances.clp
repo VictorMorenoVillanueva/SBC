@@ -8,8 +8,8 @@
         (tematica "Retrato")
         (dimensiones "77 x 53")
         (sala 12)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia2] of Obra
         (nombre "La Última Cena")
@@ -20,7 +20,8 @@
         (tematica "Religiosa")
         (dimensiones "460 x 880")
         (sala 8)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia3] of Obra
         (nombre "La Escuela de Atenas")
@@ -31,8 +32,8 @@
         (tematica "Histórica")
         (dimensiones "500 x 770")
         (sala 14)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia4] of Obra
         (nombre "El Nacimiento de Venus")
@@ -43,8 +44,8 @@
         (tematica "Mitológica")
         (dimensiones "172.5 x 278.9")
         (sala 10)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15))
 
     ([instancia5] of Obra
         (nombre "Las Meninas")
@@ -55,8 +56,8 @@
         (tematica "Retrato")
         (dimensiones "318 x 276")
         (sala 16)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia6] of Obra
         (nombre "La Ronda de Noche")
@@ -67,8 +68,8 @@
         (tematica "Histórica")
         (dimensiones "363 x 437")
         (sala 11)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia7] of Obra
         (nombre "El Jardín de las Delicias")
@@ -79,8 +80,8 @@
         (tematica "Religiosa")
         (dimensiones "389 x 220")
         (sala 15)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia8] of Obra
         (nombre "La Libertad Guiando al Pueblo")
@@ -91,7 +92,8 @@
         (tematica "Histórica")
         (dimensiones "260 x 325")
         (sala 20)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
 
     ([instancia9] of Obra
@@ -103,7 +105,8 @@
         (tematica "Histórica")
         (dimensiones "100 x 99")
         (sala 40)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
 
     ([instancia10] of Obra
@@ -115,7 +118,8 @@
         (tematica "Histórica")
         (dimensiones "349 x 776")
         (sala 25)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
 
     ([instancia11] of Obra
@@ -127,7 +131,8 @@
         (tematica "Retrato")
         (dimensiones "91 x 73.5")
         (sala 18)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
 
     ([instancia12] of Obra
@@ -139,7 +144,8 @@
         (tematica "Retrato")
         (dimensiones "180 x 180")
         (sala 19)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
 
     ([instancia13] of Obra
@@ -151,7 +157,8 @@
         (tematica "Paisaje")
         (dimensiones "48 x 63")
         (sala 22)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
 
     ([instancia14] of Obra
@@ -163,7 +170,8 @@
         (tematica "Naturaleza Muerta")
         (dimensiones "92 x 73")
         (sala 21)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia15] of Obra
         (nombre "La Noche Estrellada")
@@ -174,7 +182,8 @@
         (tematica "Paisaje")
         (dimensiones "73.7 x 92.1")
         (sala 21)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
 
     ([instancia16] of Obra
@@ -186,7 +195,8 @@
         (tematica "Abstracta")
         (dimensiones "51 x 77")
         (sala 40)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
 
     ([instancia17] of Obra
@@ -198,7 +208,8 @@
         (tematica "Mitológica")
         (dimensiones "221 x 181")
         (sala 9)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia18] of Obra
         (nombre "La Balsa de la Medusa")
@@ -209,7 +220,8 @@
         (tematica "Histórica")
         (dimensiones "491 x 716")
         (sala 14)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia19] of Obra
         (nombre "El Baile en el Moulin de la Galette")
@@ -220,7 +232,8 @@
         (tematica "Costumbrista")
         (dimensiones "131 x 175")
         (sala 17)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia20] of Obra
         (nombre "Saturno devorando a su hijo")
@@ -231,7 +244,8 @@
         (tematica "Mitológica")
         (dimensiones "143 x 81")
         (sala 6)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia21] of Obra
         (nombre "El Caballero de la Mano en el Pecho")
@@ -242,7 +256,8 @@
         (tematica "Retrato")
         (dimensiones "81 x 66")
         (sala 15)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia22] of Obra
         (nombre "El Juramento de los Horacios")
@@ -253,7 +268,8 @@
         (tematica "Histórica")
         (dimensiones "330 x 425")
         (sala 12)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia23] of Obra
         (nombre "La Muerte de Marat")
@@ -264,7 +280,8 @@
         (tematica "Histórica")
         (dimensiones "162 x 128")
         (sala 13)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia24] of Obra
         (nombre "El Coloso")
@@ -275,7 +292,8 @@
         (tematica "Histórica")
         (dimensiones "116 x 105")
         (sala 10)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia25] of Obra
         (nombre "La Venus del Espejo")
@@ -286,7 +304,8 @@
         (tematica "Mitológica")
         (dimensiones "123 x 177")
         (sala 16)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia26] of Obra
         (nombre "La Fragua de Vulcano")
@@ -297,7 +316,8 @@
         (tematica "Mitológica")
         (dimensiones "223 x 290")
         (sala 18)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia27] of Obra
         (nombre "Muchacha con un Pendiente de Perla")
@@ -308,7 +328,8 @@
         (tematica "Retrato")
         (dimensiones "44.5 x 39")
         (sala 7)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia28] of Obra
         (nombre "Vista de Delft")
@@ -319,7 +340,8 @@
         (tematica "Paisaje")
         (dimensiones "96.5 x 115.7")
         (sala 13)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia29] of Obra
         (nombre "La Primavera")
@@ -330,7 +352,8 @@
         (tematica "Mitológica")
         (dimensiones "203 x 314")
         (sala 10)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia30] of Obra
         (nombre "La Anunciación")
@@ -341,7 +364,8 @@
         (tematica "Religiosa")
         (dimensiones "98 x 217")
         (sala 9)
-        (relevancia 2))
+        (relevancia 2)
+        (duracion 15))
 
     ([instancia31] of Obra
         (nombre "El Rapto de Europa")
@@ -352,7 +376,8 @@
         (tematica "Mitológica")
         (dimensiones "185 x 205")
         (sala 15)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia32] of Obra
         (nombre "El Jardín del Amor")
@@ -363,7 +388,8 @@
         (tematica "Costumbrista")
         (dimensiones "198 x 283")
         (sala 20)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia33] of Obra
         (nombre "La Tempestad")
@@ -374,7 +400,8 @@
         (tematica "Paisaje")
         (dimensiones "82 x 73")
         (sala 11)
-        (relevancia 2))
+        (relevancia 2)
+        (duracion 15))
 
     ([instancia34] of Obra
         (nombre "Judith decapitando a Holofernes")
@@ -385,7 +412,8 @@
         (tematica "Histórica")
         (dimensiones "199 x 162")
         (sala 6)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia35] of Obra
         (nombre "El Entierro del Conde de Orgaz")
@@ -396,7 +424,8 @@
         (tematica "Religiosa")
         (dimensiones "480 x 360")
         (sala 17)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia36] of Obra
         (nombre "Baile Campestre")
@@ -407,7 +436,8 @@
         (tematica "Costumbrista")
         (dimensiones "114 x 180")
         (sala 8)
-        (relevancia 2))
+        (relevancia 2)
+        (duracion 15))
 
     ([instancia37] of Obra
         (nombre "Los Jugadores de Cartas")
@@ -418,7 +448,8 @@
         (tematica "Costumbrista")
         (dimensiones "47 x 56")
         (sala 19)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia38] of Obra
         (nombre "El Mercado de Esclavos")
@@ -429,7 +460,8 @@
         (tematica "Histórica")
         (dimensiones "85 x 129")
         (sala 14)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia39] of Obra
         (nombre "El Almuerzo de los Remeros")
@@ -440,7 +472,8 @@
         (tematica "Costumbrista")
         (dimensiones "129.5 x 172.7")
         (sala 21)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia40] of Obra
         (nombre "Mujer con Sombrilla")
@@ -451,7 +484,8 @@
         (tematica "Retrato")
         (dimensiones "100 x 81")
         (sala 22)
-        (relevancia 3))
+        (relevancia 3)
+        (duracion 15))
 
     ([instancia41] of Obra
         (nombre "El Violinista")
@@ -462,7 +496,8 @@
         (tematica "Retrato")
         (dimensiones "77 x 98")
         (sala 29)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia42] of Obra
         (nombre "La Ola")
@@ -473,7 +508,8 @@
         (tematica "Paisaje")
         (dimensiones "88 x 112")
         (sala 24)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia43] of Obra
         (nombre "Campesinos Comiendo Sopa")
@@ -484,7 +520,8 @@
         (tematica "Costumbrista")
         (dimensiones "74 x 60")
         (sala 18)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia44] of Obra
         (nombre "Joven con una Flor")
@@ -495,7 +532,8 @@
         (tematica "Retrato")
         (dimensiones "92 x 73")
         (sala 25)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia45] of Obra
         (nombre "Tarde en el Lago")
@@ -506,7 +544,8 @@
         (tematica "Paisaje")
         (dimensiones "54 x 65")
         (sala 22)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia46] of Obra
         (nombre "La Encajera")
@@ -517,7 +556,8 @@
         (tematica "Costumbrista")
         (dimensiones "24.5 x 21")
         (sala 9)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia47] of Obra
         (nombre "Mujer con Mandolina")
@@ -528,7 +568,8 @@
         (tematica "Retrato")
         (dimensiones "92 x 73")
         (sala 28)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia48] of Obra
         (nombre "Tarde de Domingo")
@@ -539,7 +580,8 @@
         (tematica "Paisaje")
         (dimensiones "60 x 80")
         (sala 20)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia49] of Obra
         (nombre "Amapolas")
@@ -550,7 +592,8 @@
         (tematica "Paisaje")
         (dimensiones "50 x 65")
         (sala 21)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia50] of Obra
         (nombre "Maternidad")
@@ -561,7 +604,8 @@
         (tematica "Retrato")
         (dimensiones "89 x 116")
         (sala 26)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia51] of Obra
         (nombre "La Lectura")
@@ -572,7 +616,8 @@
         (tematica "Retrato")
         (dimensiones "77 x 92")
         (sala 17)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia52] of Obra
         (nombre "Niña con Cesta de Frutas")
@@ -583,7 +628,8 @@
         (tematica "Retrato")
         (dimensiones "65 x 81")
         (sala 23)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia53] of Obra
         (nombre "Barcos en el Puerto")
@@ -594,7 +640,8 @@
         (tematica "Paisaje")
         (dimensiones "60 x 80")
         (sala 22)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia54] of Obra
         (nombre "Catedral de Rouen")
@@ -605,7 +652,8 @@
         (tematica "Religiosa")
         (dimensiones "100 x 65")
         (sala 24)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia55] of Obra
         (nombre "Niña con Pez Dorado")
@@ -616,7 +664,8 @@
         (tematica "Retrato")
         (dimensiones "81 x 100")
         (sala 27)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia56] of Obra
         (nombre "Paisaje con Árboles")
@@ -627,7 +676,8 @@
         (tematica "Paisaje")
         (dimensiones "72 x 92")
         (sala 19)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia57] of Obra
         (nombre "Dos Mujeres Caminando")
@@ -638,7 +688,8 @@
         (tematica "Costumbrista")
         (dimensiones "46 x 55")
         (sala 20)
-        (relevancia 1))
+        (relevancia 1)
+        (duracion 15))
 
     ([instancia58] of Obra
         (nombre "El Estanque de Nenúfares")
@@ -649,8 +700,9 @@
         (tematica "Paisaje")
         (dimensiones "100 x 81")
         (sala 21)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia59] of Obra
         (nombre "El Desayuno")
         (autor "Édouard Manet")
@@ -660,8 +712,9 @@
         (tematica "Costumbrista")
         (dimensiones "80 x 100")
         (sala 18)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia60] of Obra
         (nombre "Retrato de una Mujer con Sombrero")
         (autor "Paul Cézanne")
@@ -671,8 +724,9 @@
         (tematica "Retrato")
         (dimensiones "55 x 46")
         (sala 26)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia61] of Obra
         (nombre "La Barca de Dante")
         (autor "Eugène Delacroix")
@@ -682,8 +736,9 @@
         (tematica "Histórica")
         (dimensiones "189 x 241")
         (sala 14)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia62] of Obra
         (nombre "El Descubrimiento de América por Cristóbal Colón")
         (autor "Salvador Dalí")
@@ -693,8 +748,9 @@
         (tematica "Histórica")
         (dimensiones "410 x 284")
         (sala 40)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia63] of Obra
         (nombre "Campesina con Sombrero")
         (autor "Paul Gauguin")
@@ -704,8 +760,9 @@
         (tematica "Retrato")
         (dimensiones "65 x 75")
         (sala 27)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia64] of Obra
         (nombre "Retrato de la Madre del Artista")
         (autor "James McNeill Whistler")
@@ -715,8 +772,9 @@
         (tematica "Retrato")
         (dimensiones "144.3 x 162.4")
         (sala 19)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia65] of Obra
         (nombre "La Danza")
         (autor "Henri Matisse")
@@ -726,8 +784,9 @@
         (tematica "Costumbrista")
         (dimensiones "260 x 391")
         (sala 28)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia66] of Obra
         (nombre "El Hilo Rojo")
         (autor "Joan Miró")
@@ -737,8 +796,9 @@
         (tematica "Abstracta")
         (dimensiones "73 x 92")
         (sala 29)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia67] of Obra
         (nombre "La Balsa de la Medusa")
         (autor "Théodore Géricault")
@@ -748,8 +808,9 @@
         (tematica "Histórica")
         (dimensiones "491 x 716")
         (sala 12)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia68] of Obra
         (nombre "Casa junto al Lago")
         (autor "Wassily Kandinsky")
@@ -759,8 +820,9 @@
         (tematica "Paisaje")
         (dimensiones "80 x 120")
         (sala 25)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia69] of Obra
         (nombre "El Bebedor de Absenta")
         (autor "Édouard Manet")
@@ -770,8 +832,9 @@
         (tematica "Retrato")
         (dimensiones "180 x 105")
         (sala 18)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia70] of Obra
         (nombre "Los Girasoles")
         (autor "Vincent van Gogh")
@@ -781,8 +844,9 @@
         (tematica "Naturaleza muerta")
         (dimensiones "92.1 x 73")
         (sala 27)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia71] of Obra
         (nombre "El Estudio del Artista")
         (autor "Gustave Courbet")
@@ -792,8 +856,9 @@
         (tematica "Costumbrista")
         (dimensiones "361 x 598")
         (sala 24)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia72] of Obra
         (nombre "Naturaleza Muerta con Manzanas")
         (autor "Paul Cézanne")
@@ -803,8 +868,9 @@
         (tematica "Naturaleza muerta")
         (dimensiones "65 x 80")
         (sala 26)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia73] of Obra
         (nombre "Impresión, Sol Naciente")
         (autor "Claude Monet")
@@ -814,8 +880,9 @@
         (tematica "Paisaje")
         (dimensiones "48 x 63")
         (sala 22)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia74] of Obra
         (nombre "El Adivino")
         (autor "Georges de La Tour")
@@ -825,8 +892,9 @@
         (tematica "Costumbrista")
         (dimensiones "101 x 123")
         (sala 16)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia75] of Obra
         (nombre "El Puente de Argenteuil")
         (autor "Claude Monet")
@@ -836,8 +904,9 @@
         (tematica "Paisaje")
         (dimensiones "60 x 80")
         (sala 21)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia76] of Obra
         (nombre "Retrato de Vincent van Gogh")
         (autor "Henri de Toulouse-Lautrec")
@@ -847,8 +916,9 @@
         (tematica "Retrato")
         (dimensiones "54 x 66")
         (sala 26)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia77] of Obra
         (nombre "La Persistencia de la Memoria")
         (autor "Salvador Dalí")
@@ -858,8 +928,9 @@
         (tematica "Abstracta")
         (dimensiones "24 x 33")
         (sala 30)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia78] of Obra
         (nombre "El Café Nocturno")
         (autor "Vincent van Gogh")
@@ -869,8 +940,9 @@
         (tematica "Costumbrista")
         (dimensiones "72 x 92")
         (sala 27)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia79] of Obra
         (nombre "Paisaje Alpino")
         (autor "Caspar David Friedrich")
@@ -880,8 +952,9 @@
         (tematica "Paisaje")
         (dimensiones "70 x 90")
         (sala 13)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia80] of Obra
         (nombre "La Noche Estrellada")
         (autor "Vincent van Gogh")
@@ -891,8 +964,9 @@
         (tematica "Paisaje")
         (dimensiones "73.7 x 92.1")
         (sala 28)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia81] of Obra
         (nombre "La Cosecha")
         (autor "Pieter Bruegel el Viejo")
@@ -902,8 +976,9 @@
         (tematica "Costumbrista")
         (dimensiones "118 x 160")
         (sala 8)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia82] of Obra
         (nombre "La Lección de Anatomía del Dr. Nicolaes Tulp")
         (autor "Rembrandt")
@@ -913,8 +988,9 @@
         (tematica "Histórica")
         (dimensiones "216 x 169")
         (sala 10)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia83] of Obra
         (nombre "Naturaleza Muerta con Botella de Vino")
         (autor "Juan Gris")
@@ -924,8 +1000,9 @@
         (tematica "Naturaleza muerta")
         (dimensiones "60 x 81")
         (sala 28)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia84] of Obra
         (nombre "La Inmaculada Concepción")
         (autor "Bartolomé Esteban Murillo")
@@ -935,8 +1012,9 @@
         (tematica "Religiosa")
         (dimensiones "267 x 190")
         (sala 15)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia85] of Obra
         (nombre "Naturaleza Muerta con Silla de Rejilla")
         (autor "Pablo Picasso")
@@ -946,8 +1024,9 @@
         (tematica "Naturaleza muerta")
         (dimensiones "29 x 37")
         (sala 30)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia86] of Obra
         (nombre "La Vista de Toledo")
         (autor "El Greco")
@@ -957,8 +1036,9 @@
         (tematica "Paisaje")
         (dimensiones "121 x 108")
         (sala 11)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia87] of Obra
         (nombre "El Viñedo Rojo")
         (autor "Vincent van Gogh")
@@ -968,8 +1048,9 @@
         (tematica "Paisaje")
         (dimensiones "75 x 93")
         (sala 27)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia88] of Obra
         (nombre "La Virgen de las Rocas")
         (autor "Leonardo da Vinci")
@@ -979,8 +1060,9 @@
         (tematica "Religiosa")
         (dimensiones "199 x 122")
         (sala 5)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia89] of Obra
         (nombre "Paisaje con Cascada")
         (autor "Jacob van Ruisdael")
@@ -990,8 +1072,9 @@
         (tematica "Paisaje")
         (dimensiones "98 x 128")
         (sala 9)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia90] of Obra
         (nombre "El Matrimonio Arnolfini")
         (autor "Jan van Eyck")
@@ -1001,8 +1084,9 @@
         (tematica "Retrato")
         (dimensiones "82 x 60")
         (sala 6)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia91] of Obra
         (nombre "El Barco Fantasma")
         (autor "Joseph Mallord William Turner")
@@ -1012,8 +1096,9 @@
         (tematica "Paisaje")
         (dimensiones "91 x 122")
         (sala 13)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia92] of Obra
         (nombre "Hombre con un Sombrero")
         (autor "Amedeo Modigliani")
@@ -1023,8 +1108,9 @@
         (tematica "Retrato")
         (dimensiones "100 x 65")
         (sala 29)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia93] of Obra
         (nombre "Los Jugadores de Cartas")
         (autor "Paul Cézanne")
@@ -1034,8 +1120,9 @@
         (tematica "Costumbrista")
         (dimensiones "60 x 73")
         (sala 26)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia94] of Obra
         (nombre "El Juramento de los Horacios")
         (autor "Jacques-Louis David")
@@ -1045,8 +1132,9 @@
         (tematica "Histórica")
         (dimensiones "330 x 425")
         (sala 17)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia95] of Obra
         (nombre "La Despedida")
         (autor "Édouard Vuillard")
@@ -1056,8 +1144,9 @@
         (tematica "Costumbrista")
         (dimensiones "88 x 111")
         (sala 25)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia96] of Obra
         (nombre "Retrato de Madame X")
         (autor "John Singer Sargent")
@@ -1067,8 +1156,9 @@
         (tematica "Retrato")
         (dimensiones "234 x 109")
         (sala 19)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia97] of Obra
         (nombre "Las Espigadoras")
         (autor "Jean-François Millet")
@@ -1078,8 +1168,9 @@
         (tematica "Costumbrista")
         (dimensiones "83.5 x 111")
         (sala 18)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia98] of Obra
         (nombre "El Carro de Heno")
         (autor "John Constable")
@@ -1089,8 +1180,9 @@
         (tematica "Paisaje")
         (dimensiones "130 x 183")
         (sala 13)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia99] of Obra
         (nombre "Bodegón con Manzanas")
         (autor "Paul Cézanne")
@@ -1100,8 +1192,9 @@
         (tematica "Naturaleza muerta")
         (dimensiones "65 x 81")
         (sala 26)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia100] of Obra
         (nombre "La Tentación de San Antonio")
         (autor "Hieronymus Bosch (El Bosco)")
@@ -1111,8 +1204,9 @@
         (tematica "Religiosa")
         (dimensiones "131 x 119")
         (sala 7)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia101] of Obra
         (nombre "La Belleza de Tahití")
         (autor "Paul Gauguin")
@@ -1122,8 +1216,9 @@
         (tematica "Retrato")
         (dimensiones "92 x 73")
         (sala 27)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia102] of Obra
         (nombre "Retrato de Dora Maar")
         (autor "Pablo Picasso")
@@ -1133,8 +1228,9 @@
         (tematica "Retrato")
         (dimensiones "92 x 65")
         (sala 30)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia103] of Obra
         (nombre "El Pífano")
         (autor "Édouard Manet")
@@ -1144,8 +1240,9 @@
         (tematica "Retrato")
         (dimensiones "160 x 97")
         (sala 22)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia104] of Obra
         (nombre "El Molino de la Galette")
         (autor "Pierre-Auguste Renoir")
@@ -1155,8 +1252,9 @@
         (tematica "Costumbrista")
         (dimensiones "131 x 175")
         (sala 22)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia105] of Obra
         (nombre "La Ninfa y el Sátiro")
         (autor "William-Adolphe Bouguereau")
@@ -1166,8 +1264,9 @@
         (tematica "Mitológica")
         (dimensiones "260 x 180")
         (sala 20)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia106] of Obra
         (nombre "Mujer Leyendo una Carta")
         (autor "Johannes Vermeer")
@@ -1177,8 +1276,9 @@
         (tematica "Costumbrista")
         (dimensiones "46 x 39")
         (sala 9)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia107] of Obra
         (nombre "Retrato de Giovanna Tornabuoni")
         (autor "Domenico Ghirlandaio")
@@ -1188,8 +1288,9 @@
         (tematica "Retrato")
         (dimensiones "77 x 49")
         (sala 5)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia108] of Obra
         (nombre "Muchacha con Aro")
         (autor "Pierre-Auguste Renoir")
@@ -1199,8 +1300,9 @@
         (tematica "Retrato")
         (dimensiones "116 x 81")
         (sala 22)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia109] of Obra
         (nombre "La Casa Amarilla")
         (autor "Vincent van Gogh")
@@ -1210,8 +1312,9 @@
         (tematica "Paisaje")
         (dimensiones "76 x 94")
         (sala 27)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia110] of Obra
         (nombre "La Tempestad")
         (autor "Giorgione")
@@ -1221,8 +1324,9 @@
         (tematica "Paisaje")
         (dimensiones "82 x 73")
         (sala 6)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia111] of Obra
         (nombre "El Caballero de la Mano en el Pecho")
         (autor "El Greco")
@@ -1232,8 +1336,9 @@
         (tematica "Retrato")
         (dimensiones "81 x 66")
         (sala 11)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia112] of Obra
         (nombre "Le Moulin Rouge")
         (autor "Henri de Toulouse-Lautrec")
@@ -1243,8 +1348,9 @@
         (tematica "Costumbrista")
         (dimensiones "120 x 170")
         (sala 26)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia113] of Obra
         (nombre "Madame Cézanne en la Silla Roja")
         (autor "Paul Cézanne")
@@ -1254,8 +1360,9 @@
         (tematica "Retrato")
         (dimensiones "81 x 65")
         (sala 26)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia114] of Obra
         (nombre "La Masacre de los Inocentes")
         (autor "Peter Paul Rubens")
@@ -1265,8 +1372,9 @@
         (tematica "Histórica")
         (dimensiones "142 x 182")
         (sala 12)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia115] of Obra
         (nombre "Retrato de una Mujer Desconocida")
         (autor "Ivan Kramskoi")
@@ -1276,8 +1384,9 @@
         (tematica "Retrato")
         (dimensiones "75 x 99")
         (sala 18)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia116] of Obra
         (nombre "La Rendición de Breda")
         (autor "Diego Velázquez")
@@ -1287,8 +1396,9 @@
         (tematica "Histórica")
         (dimensiones "307 x 367")
         (sala 15)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia117] of Obra
         (nombre "El Árbol de la Vida")
         (autor "Gustav Klimt")
@@ -1298,8 +1408,9 @@
         (tematica "Abstracta")
         (dimensiones "138 x 102")
         (sala 25)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia118] of Obra
         (nombre "La Habitación Roja")
         (autor "Henri Matisse")
@@ -1309,8 +1420,9 @@
         (tematica "Costumbrista")
         (dimensiones "180 x 220")
         (sala 28)
-        (relevancia 1))
-
+        (relevancia 1)
+        (duracion 15)
+    )
     ([instancia119] of Obra
         (nombre "El Pintor en su Estudio")
         (autor "Johannes Vermeer")
@@ -1320,8 +1432,9 @@
         (tematica "Costumbrista")
         (dimensiones "120 x 100")
         (sala 10)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia120] of Obra
         (nombre "La Encajera")
         (autor "Johannes Vermeer")
@@ -1331,8 +1444,9 @@
         (tematica "Costumbrista")
         (dimensiones "24 x 21")
         (sala 10)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia121] of Obra
         (nombre "El Quitasol")
         (autor "Francisco de Goya")
@@ -1342,8 +1456,9 @@
         (tematica "Costumbrista")
         (dimensiones "104 x 152")
         (sala 14)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia122] of Obra
         (nombre "El Tres de Mayo de 1808")
         (autor "Francisco de Goya")
@@ -1353,8 +1468,9 @@
         (tematica "Histórica")
         (dimensiones "266 x 345")
         (sala 14)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia123] of Obra
         (nombre "La Maja Desnuda")
         (autor "Francisco de Goya")
@@ -1364,8 +1480,9 @@
         (tematica "Retrato")
         (dimensiones "97 x 190")
         (sala 14)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia124] of Obra
         (nombre "La Familia de Carlos IV")
         (autor "Francisco de Goya")
@@ -1375,8 +1492,9 @@
         (tematica "Retrato")
         (dimensiones "280 x 336")
         (sala 14)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia125] of Obra
         (nombre "Mujer con Sombrero y Collar de Flores")
         (autor "Pablo Picasso")
@@ -1386,8 +1504,9 @@
         (tematica "Retrato")
         (dimensiones "61 x 50")
         (sala 30)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia126] of Obra
         (nombre "Los Tres Músicos")
         (autor "Pablo Picasso")
@@ -1397,8 +1516,9 @@
         (tematica "Costumbrista")
         (dimensiones "204 x 188")
         (sala 30)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia127] of Obra
         (nombre "La Mujer Llorando")
         (autor "Pablo Picasso")
@@ -1408,8 +1528,9 @@
         (tematica "Retrato")
         (dimensiones "60 x 49")
         (sala 30)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia128] of Obra
         (nombre "El Sueño")
         (autor "Pablo Picasso")
@@ -1419,8 +1540,9 @@
         (tematica "Retrato")
         (dimensiones "130 x 97")
         (sala 30)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia129] of Obra
         (nombre "El Aguador de Sevilla")
         (autor "Diego Velázquez")
@@ -1430,8 +1552,9 @@
         (tematica "Costumbrista")
         (dimensiones "105 x 80")
         (sala 15)
-        (relevancia 2))
-
+        (relevancia 2)
+        (duracion 15)
+    )
     ([instancia130] of Obra
         (nombre "Cristo Crucificado")
         (autor "Diego Velázquez")
@@ -1441,8 +1564,9 @@
         (tematica "Religiosa")
         (dimensiones "249 x 170")
         (sala 15)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia131] of Obra
         (nombre "El Hombre de Vitruvio")
         (autor "Leonardo da Vinci")
@@ -1452,8 +1576,9 @@
         (tematica "Retrato")
         (dimensiones "34 x 25")
         (sala 3)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia132] of Obra
         (nombre "Adoración de los Magos")
         (autor "Leonardo da Vinci")
@@ -1463,8 +1588,9 @@
         (tematica "Religiosa")
         (dimensiones "246 x 243")
         (sala 3)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia133] of Obra
         (nombre "El Gran Masturbador")
         (autor "Salvador Dalí")
@@ -1474,8 +1600,9 @@
         (tematica "Abstracta")
         (dimensiones "110 x 150")
         (sala 40)
-        (relevancia 3))
-
+        (relevancia 3)
+        (duracion 15)
+    )
     ([instancia134] of Obra
         (nombre "Sueño Causado por el Vuelo de una Abeja Alrededor de una Granada un Segundo Antes de Despertar")
         (autor "Salvador Dalí")
@@ -1485,8 +1612,9 @@
         (tematica "Abstracta")
         (dimensiones "51 x 41")
         (sala 40)
-        (relevancia 3))
-)
+        (relevancia 3)
+        (duracion 15)
+    ))
 
 
 
