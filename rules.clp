@@ -1480,7 +1480,7 @@
    (not (ObrasUsadas (nombre ?nombre7)))
    (ObrasRelevantes (nombre ?nombre7)) ;; usa las relevantes primero
    =>
-   (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.7 ?dur7)))
+   (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.5 ?dur7)))
    (assert (ObrasUsadas (nombre ?nombre7)))
    (assert (ProgramacionObras (obrasRecomendadasDia7 ?nombre7) (duracionVisitaDia7 ?dur7) (tiempoCuadrosDia7 ?dur7)
                               (autoresCuadrosDia7 ?autor7) (añoCuadrosDia7 ?año7)))
@@ -1508,7 +1508,7 @@
    (not (ObrasUsadas (nombre ?nombre)))
     (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
    =>
-    (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.7 ?dur7)))
+    (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.5 ?dur7)))
    (assert (ObrasUsadas (nombre ?nombre)))
    (modify ?prog7 (obrasRecomendadasDia7 $?obras7 ?nombre)
                   (autoresCuadrosDia7 $?autores7 ?autor)
@@ -1535,7 +1535,7 @@
    (not (ObrasUsadas (nombre ?nombre7)))
    (ObrasRelevantesNoCompletas (nombre ?nombre7)) ;; usa las menos relevantes si no hay relevantes
    =>
-    (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.7 ?dur7)))
+    (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.5 ?dur7)))
    (assert (ObrasUsadas (nombre ?nombre7)))
    (assert (ProgramacionObras (obrasRecomendadasDia7 ?nombre7) (duracionVisitaDia7 ?dur7) (tiempoCuadrosDia7 ?dur7)
                               (autoresCuadrosDia7 ?autor7) (añoCuadrosDia7 ?año7)))
@@ -1560,7 +1560,7 @@
    (not (ObrasUsadas (nombre ?nombre))) 
    (ObrasRelevantesNoCompletas (nombre ?nombre))
    =>
-   (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.7 ?dur7)))
+   (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.5 ?dur7)))
    (if (<= (+ ?dur7 ?duracionVisitaDia7) ?tiempo) then
         (assert (ObrasUsadas (nombre ?nombre)))
         (modify ?prog (obrasRecomendadasDia7 $?obras7 ?nombre)
@@ -1588,7 +1588,7 @@
    (not (ObrasUsadas (nombre ?nombre7)))
    (ObrasRelleno (nombre ?nombre7)) ;; usa obras de relleno si no hay relevantes ni menos relevantes
    =>
-   (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.7 ?dur7)))
+   (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.5 ?dur7)))
    (assert (ObrasUsadas (nombre ?nombre7)))
    (assert (ProgramacionObras (obrasRecomendadasDia7 ?nombre7) (duracionVisitaDia7 ?dur7) (tiempoCuadrosDia7 ?dur7)
                               (autoresCuadrosDia7 ?autor7) (añoCuadrosDia7 ?año7)))
@@ -1613,7 +1613,7 @@
    (not (ObrasUsadas (nombre ?nombre))) 
    (ObrasRelleno (nombre ?nombre))
    =>
-   (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.7 ?dur7)))
+   (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.5 ?dur7)))
    (if (<= (+ ?dur7 ?duracionVisitaDia7) ?tiempo) then
         (assert (ObrasUsadas (nombre ?nombre)))
         (modify ?prog (obrasRecomendadasDia7 $?obras7 ?nombre)
