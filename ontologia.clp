@@ -9,7 +9,7 @@
 
 (defclass Obra
    (is-a USER)
-   ;(role concrete)
+   (role concrete)
    (pattern-match reactive)
    (slot nombre (type STRING) (create-accessor read-write))
    (slot autor (type STRING) (create-accessor read-write))
@@ -20,7 +20,8 @@
    (slot dimensiones (type STRING) (create-accessor read-write))
    (slot sala (type INTEGER) (create-accessor read-write))
    (slot relevancia (type INTEGER) (create-accessor read-write))
-   (slot duracion (type INTEGER) (create-accessor read-write)))
+   (slot duracion (type INTEGER) (create-accessor read-write))
+   (slot complejidad (type STRING) (create-accessor read-write)))
 
 (defclass Sala
    (is-a USER)
@@ -34,6 +35,7 @@
    (role concrete)
    (pattern-match reactive)
    (slot nivelConocimiento (type INTEGER) (create-accessor read-write))
+   (slot tamanoPreferido (type STRING) (create-accessor read-write))
    (slot preferenciasAutores (type STRING) (create-accessor read-write))
    (slot preferenciasEpocas (type STRING) (create-accessor read-write))
    (slot preferenciasTematicas (type STRING) (create-accessor read-write))
