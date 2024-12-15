@@ -489,7 +489,7 @@
 )
 
 (defrule primerasObrasDia1
-   (declare (salience 59))
+   (declare (salience 53))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia1 $?obras1) (duracionVisitaDia1 ?duracion1) (tiempoCuadrosDia1 $?tiempos1)
                            (autoresCuadrosDia1 $?autores1) (añoCuadrosDia1 $?años1) ))
@@ -531,20 +531,22 @@
            (duracion ?dur1)
            )
    (not (ObrasUsadas (nombre ?nombre)))
-    (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
+   (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur1 (* 1.5 ?dur1)))
-   (assert (ObrasUsadas (nombre ?nombre)))
-   (modify ?prog1 (obrasRecomendadasDia1 $?obras1 ?nombre)
-                  (autoresCuadrosDia1 $?autores1 ?autor)
-                  (añoCuadrosDia1 $?años1 ?año)
-                  (duracionVisitaDia1 (+ ?duracionVisitaDia1 ?dur1))
-                  (tiempoCuadrosDia1 $?tiempoCuadros1 ?dur1)
-                  )
+    (if (<= (+ ?dur1 ?duracionVisitaDia1) ?tiempo) then
+        (assert (ObrasUsadas (nombre ?nombre)))
+        (modify ?prog1 (obrasRecomendadasDia1 $?obras1 ?nombre)
+                        (autoresCuadrosDia1 $?autores1 ?autor)
+                        (añoCuadrosDia1 $?años1 ?año)
+                        (duracionVisitaDia1 (+ ?duracionVisitaDia1 ?dur1))
+                        (tiempoCuadrosDia1 $?tiempoCuadros1 ?dur1)
+                        )
+    )
 )
 
 (defrule primerasObrasDia1MenosRelevantes
-   (declare (salience 57))
+   (declare (salience 51))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia1 $?obras1) (duracionVisitaDia1 ?duracion1) (tiempoCuadrosDia1 $?tiempos1)
                            (autoresCuadrosDia1 $?autores1) (añoCuadrosDia1 $?años1)))
@@ -561,6 +563,7 @@
    (ObrasRelevantesNoCompletas (nombre ?nombre1)) ;; usa las menos relevantes si no hay relevantes
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur1 (* 1.5 ?dur1)))
+    
    (assert (ObrasUsadas (nombre ?nombre1)))
    (assert (ProgramacionObras (obrasRecomendadasDia1 ?nombre1) (duracionVisitaDia1 ?dur1) (tiempoCuadrosDia1 ?dur1)
                               (autoresCuadrosDia1 ?autor1) (añoCuadrosDia1 ?año1)))
@@ -598,7 +601,7 @@
 )
 
 (defrule primerasObrasDia1ConRelleno
-   (declare (salience 55))
+   (declare (salience 51))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia1 $?obras1) (duracionVisitaDia1 ?duracion1) (tiempoCuadrosDia1 $?tiempos1)
                            (autoresCuadrosDia1 $?autores1) (añoCuadrosDia1 $?años1) ))
@@ -674,7 +677,7 @@
 )
 
 (defrule añadirObrasDia2
-   (declare (salience 58))
+   (declare (salience 52))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog2 <- (ProgramacionObras (obrasRecomendadasDia2 $?obras2)
@@ -693,20 +696,22 @@
            (duracion ?dur2)
            )
    (not (ObrasUsadas (nombre ?nombre)))
-    (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
+   (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur2 (* 1.5 ?dur2)))
-   (assert (ObrasUsadas (nombre ?nombre)))
-   (modify ?prog2 (obrasRecomendadasDia2 $?obras2 ?nombre)
-                  (autoresCuadrosDia2 $?autores2 ?autor)
-                  (añoCuadrosDia2 $?años2 ?año)
-                  (duracionVisitaDia2 (+ ?duracionVisitaDia2 ?dur2))
-                  (tiempoCuadrosDia2 $?tiempoCuadros2 ?dur2)
-                  )
+    (if (<= (+ ?dur2 ?duracionVisitaDia2) ?tiempo) then
+        (assert (ObrasUsadas (nombre ?nombre)))
+        (modify ?prog2 (obrasRecomendadasDia2 $?obras2 ?nombre)
+                        (autoresCuadrosDia2 $?autores2 ?autor)
+                        (añoCuadrosDia2 $?años2 ?año)
+                        (duracionVisitaDia2 (+ ?duracionVisitaDia2 ?dur2))
+                        (tiempoCuadrosDia2 $?tiempoCuadros2 ?dur2)
+                        )
+    )
 )
 
 (defrule primerasObrasDia2MenosRelevantes
-   (declare (salience 52))
+   (declare (salience 51))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia2 $?obras2) (duracionVisitaDia2 ?duracion2) (tiempoCuadrosDia2 $?tiempos2)
                            (autoresCuadrosDia2 $?autores2) (añoCuadrosDia2 $?años2)))
@@ -723,13 +728,14 @@
    (ObrasRelevantesNoCompletas (nombre ?nombre2)) ;; usa las menos relevantes si no hay relevantes
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur2 (* 1.5 ?dur2)))
+    
    (assert (ObrasUsadas (nombre ?nombre2)))
    (assert (ProgramacionObras (obrasRecomendadasDia2 ?nombre2) (duracionVisitaDia2 ?dur2) (tiempoCuadrosDia2 ?dur2)
                               (autoresCuadrosDia2 ?autor2) (añoCuadrosDia2 ?año2)))
 )
 
 (defrule rellenarDia2ConMenosRelevantes
-   (declare (salience 56))
+   (declare (salience 50))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia2 $?obras2) 
@@ -760,7 +766,7 @@
 )
 
 (defrule primerasObrasDia2ConRelleno
-   (declare (salience 51))
+   (declare (salience 49))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia2 $?obras2) (duracionVisitaDia2 ?duracion2) (tiempoCuadrosDia2 $?tiempos2)
                            (autoresCuadrosDia2 $?autores2) (añoCuadrosDia2 $?años2) ))
@@ -782,7 +788,7 @@
 )
 
 (defrule rellenarDia2ConRelleno
-   (declare (salience 54))
+   (declare (salience 48))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia2 $?obras2) 
@@ -812,9 +818,8 @@
    )
 )
 
-
 (defrule primerasObrasDia3
-   (declare (salience 50))
+   (declare (salience 47))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia3 $?obras3) (duracionVisitaDia3 ?duracion3) (tiempoCuadrosDia3 $?tiempos3)
                            (autoresCuadrosDia3 $?autores3) (añoCuadrosDia3 $?años3) ))
@@ -837,7 +842,7 @@
 )
 
 (defrule añadirObrasDia3
-   (declare (salience 58))
+   (declare (salience 46))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog3 <- (ProgramacionObras (obrasRecomendadasDia3 $?obras3)
@@ -856,20 +861,22 @@
            (duracion ?dur3)
            )
    (not (ObrasUsadas (nombre ?nombre)))
-    (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
+   (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur3 (* 1.5 ?dur3)))
-   (assert (ObrasUsadas (nombre ?nombre)))
-   (modify ?prog3 (obrasRecomendadasDia3 $?obras3 ?nombre)
-                  (autoresCuadrosDia3 $?autores3 ?autor)
-                  (añoCuadrosDia3 $?años3 ?año)
-                  (duracionVisitaDia3 (+ ?duracionVisitaDia3 ?dur3))
-                  (tiempoCuadrosDia3 $?tiempoCuadros3 ?dur3)
-                  )
+    (if (<= (+ ?dur3 ?duracionVisitaDia3) ?tiempo) then
+        (assert (ObrasUsadas (nombre ?nombre)))
+        (modify ?prog3 (obrasRecomendadasDia3 $?obras3 ?nombre)
+                        (autoresCuadrosDia3 $?autores3 ?autor)
+                        (añoCuadrosDia3 $?años3 ?año)
+                        (duracionVisitaDia3 (+ ?duracionVisitaDia3 ?dur3))
+                        (tiempoCuadrosDia3 $?tiempoCuadros3 ?dur3)
+                        )
+    )
 )
 
 (defrule primerasObrasDia3MenosRelevantes
-   (declare (salience 49))
+   (declare (salience 45))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia3 $?obras3) (duracionVisitaDia3 ?duracion3) (tiempoCuadrosDia3 $?tiempos3)
                            (autoresCuadrosDia3 $?autores3) (añoCuadrosDia3 $?años3)))
@@ -886,13 +893,14 @@
    (ObrasRelevantesNoCompletas (nombre ?nombre3)) ;; usa las menos relevantes si no hay relevantes
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur3 (* 1.5 ?dur3)))
+    
    (assert (ObrasUsadas (nombre ?nombre3)))
    (assert (ProgramacionObras (obrasRecomendadasDia3 ?nombre3) (duracionVisitaDia3 ?dur3) (tiempoCuadrosDia3 ?dur3)
                               (autoresCuadrosDia3 ?autor3) (añoCuadrosDia3 ?año3)))
 )
 
 (defrule rellenarDia3ConMenosRelevantes
-   (declare (salience 48))
+   (declare (salience 44))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia3 $?obras3) 
@@ -923,7 +931,7 @@
 )
 
 (defrule primerasObrasDia3ConRelleno
-   (declare (salience 47))
+   (declare (salience 43))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia3 $?obras3) (duracionVisitaDia3 ?duracion3) (tiempoCuadrosDia3 $?tiempos3)
                            (autoresCuadrosDia3 $?autores3) (añoCuadrosDia3 $?años3) ))
@@ -945,7 +953,7 @@
 )
 
 (defrule rellenarDia3ConRelleno
-   (declare (salience 54))
+   (declare (salience 42))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia3 $?obras3) 
@@ -976,7 +984,7 @@
 )
 
 (defrule primerasObrasDia4
-   (declare (salience 46))
+   (declare (salience 41))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia4 $?obras4) (duracionVisitaDia4 ?duracion4) (tiempoCuadrosDia4 $?tiempos4)
                            (autoresCuadrosDia4 $?autores4) (añoCuadrosDia4 $?años4) ))
@@ -999,7 +1007,7 @@
 )
 
 (defrule añadirObrasDia4
-   (declare (salience 58))
+   (declare (salience 40))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog4 <- (ProgramacionObras (obrasRecomendadasDia4 $?obras4)
@@ -1018,20 +1026,22 @@
            (duracion ?dur4)
            )
    (not (ObrasUsadas (nombre ?nombre)))
-    (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
+   (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur4 (* 1.5 ?dur4)))
-   (assert (ObrasUsadas (nombre ?nombre)))
-   (modify ?prog4 (obrasRecomendadasDia4 $?obras4 ?nombre)
-                  (autoresCuadrosDia4 $?autores4 ?autor)
-                  (añoCuadrosDia4 $?años4 ?año)
-                  (duracionVisitaDia4 (+ ?duracionVisitaDia4 ?dur4))
-                  (tiempoCuadrosDia4 $?tiempoCuadros4 ?dur4)
-                  )
+    (if (<= (+ ?dur4 ?duracionVisitaDia4) ?tiempo) then
+        (assert (ObrasUsadas (nombre ?nombre)))
+        (modify ?prog4 (obrasRecomendadasDia4 $?obras4 ?nombre)
+                        (autoresCuadrosDia4 $?autores4 ?autor)
+                        (añoCuadrosDia4 $?años4 ?año)
+                        (duracionVisitaDia4 (+ ?duracionVisitaDia4 ?dur4))
+                        (tiempoCuadrosDia4 $?tiempoCuadros4 ?dur4)
+                        )
+    )
 )
 
 (defrule primerasObrasDia4MenosRelevantes
-   (declare (salience 45))
+   (declare (salience 39))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia4 $?obras4) (duracionVisitaDia4 ?duracion4) (tiempoCuadrosDia4 $?tiempos4)
                            (autoresCuadrosDia4 $?autores4) (añoCuadrosDia4 $?años4)))
@@ -1048,13 +1058,14 @@
    (ObrasRelevantesNoCompletas (nombre ?nombre4)) ;; usa las menos relevantes si no hay relevantes
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur4 (* 1.5 ?dur4)))
+    
    (assert (ObrasUsadas (nombre ?nombre4)))
    (assert (ProgramacionObras (obrasRecomendadasDia4 ?nombre4) (duracionVisitaDia4 ?dur4) (tiempoCuadrosDia4 ?dur4)
                               (autoresCuadrosDia4 ?autor4) (añoCuadrosDia4 ?año4)))
 )
 
 (defrule rellenarDia4ConMenosRelevantes
-   (declare (salience 44))
+   (declare (salience 38))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia4 $?obras4) 
@@ -1085,7 +1096,7 @@
 )
 
 (defrule primerasObrasDia4ConRelleno
-   (declare (salience 43))
+   (declare (salience 37))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia4 $?obras4) (duracionVisitaDia4 ?duracion4) (tiempoCuadrosDia4 $?tiempos4)
                            (autoresCuadrosDia4 $?autores4) (añoCuadrosDia4 $?años4) ))
@@ -1107,7 +1118,7 @@
 )
 
 (defrule rellenarDia4ConRelleno
-   (declare (salience 42))
+   (declare (salience 36))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia4 $?obras4) 
@@ -1137,9 +1148,8 @@
    )
 )
 
-
 (defrule primerasObrasDia5
-   (declare (salience 41))
+   (declare (salience 35))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia5 $?obras5) (duracionVisitaDia5 ?duracion5) (tiempoCuadrosDia5 $?tiempos5)
                            (autoresCuadrosDia5 $?autores5) (añoCuadrosDia5 $?años5) ))
@@ -1162,7 +1172,7 @@
 )
 
 (defrule añadirObrasDia5
-   (declare (salience 40))
+   (declare (salience 50))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog5 <- (ProgramacionObras (obrasRecomendadasDia5 $?obras5)
@@ -1181,20 +1191,22 @@
            (duracion ?dur5)
            )
    (not (ObrasUsadas (nombre ?nombre)))
-    (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
+   (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur5 (* 1.5 ?dur5)))
-   (assert (ObrasUsadas (nombre ?nombre)))
-   (modify ?prog5 (obrasRecomendadasDia5 $?obras5 ?nombre)
-                  (autoresCuadrosDia5 $?autores5 ?autor)
-                  (añoCuadrosDia5 $?años5 ?año)
-                  (duracionVisitaDia5 (+ ?duracionVisitaDia5 ?dur5))
-                  (tiempoCuadrosDia5 $?tiempoCuadros5 ?dur5)
-                  )
+    (if (<= (+ ?dur5 ?duracionVisitaDia5) ?tiempo) then
+        (assert (ObrasUsadas (nombre ?nombre)))
+        (modify ?prog5 (obrasRecomendadasDia5 $?obras5 ?nombre)
+                        (autoresCuadrosDia5 $?autores5 ?autor)
+                        (añoCuadrosDia5 $?años5 ?año)
+                        (duracionVisitaDia5 (+ ?duracionVisitaDia5 ?dur5))
+                        (tiempoCuadrosDia5 $?tiempoCuadros5 ?dur5)
+                        )
+    )
 )
 
 (defrule primerasObrasDia5MenosRelevantes
-   (declare (salience 39))
+   (declare (salience 34))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia5 $?obras5) (duracionVisitaDia5 ?duracion5) (tiempoCuadrosDia5 $?tiempos5)
                            (autoresCuadrosDia5 $?autores5) (añoCuadrosDia5 $?años5)))
@@ -1211,13 +1223,14 @@
    (ObrasRelevantesNoCompletas (nombre ?nombre5)) ;; usa las menos relevantes si no hay relevantes
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur5 (* 1.5 ?dur5)))
+    
    (assert (ObrasUsadas (nombre ?nombre5)))
    (assert (ProgramacionObras (obrasRecomendadasDia5 ?nombre5) (duracionVisitaDia5 ?dur5) (tiempoCuadrosDia5 ?dur5)
                               (autoresCuadrosDia5 ?autor5) (añoCuadrosDia5 ?año5)))
 )
 
 (defrule rellenarDia5ConMenosRelevantes
-   (declare (salience 38))
+   (declare (salience 33))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia5 $?obras5) 
@@ -1248,7 +1261,7 @@
 )
 
 (defrule primerasObrasDia5ConRelleno
-   (declare (salience 37))
+   (declare (salience 32))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia5 $?obras5) (duracionVisitaDia5 ?duracion5) (tiempoCuadrosDia5 $?tiempos5)
                            (autoresCuadrosDia5 $?autores5) (añoCuadrosDia5 $?años5) ))
@@ -1270,7 +1283,7 @@
 )
 
 (defrule rellenarDia5ConRelleno
-   (declare (salience 36))
+   (declare (salience 31))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia5 $?obras5) 
@@ -1300,9 +1313,8 @@
    )
 )
 
-
 (defrule primerasObrasDia6
-   (declare (salience 35))
+   (declare (salience 30))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia6 $?obras6) (duracionVisitaDia6 ?duracion6) (tiempoCuadrosDia6 $?tiempos6)
                            (autoresCuadrosDia6 $?autores6) (añoCuadrosDia6 $?años6) ))
@@ -1325,7 +1337,7 @@
 )
 
 (defrule añadirObrasDia6
-   (declare (salience 34))
+   (declare (salience 29))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog6 <- (ProgramacionObras (obrasRecomendadasDia6 $?obras6)
@@ -1344,20 +1356,22 @@
            (duracion ?dur6)
            )
    (not (ObrasUsadas (nombre ?nombre)))
-    (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
+   (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur6 (* 1.5 ?dur6)))
-   (assert (ObrasUsadas (nombre ?nombre)))
-   (modify ?prog6 (obrasRecomendadasDia6 $?obras6 ?nombre)
-                  (autoresCuadrosDia6 $?autores6 ?autor)
-                  (añoCuadrosDia6 $?años6 ?año)
-                  (duracionVisitaDia6 (+ ?duracionVisitaDia6 ?dur6))
-                  (tiempoCuadrosDia6 $?tiempoCuadros6 ?dur6)
-                  )
+    (if (<= (+ ?dur6 ?duracionVisitaDia6) ?tiempo) then
+        (assert (ObrasUsadas (nombre ?nombre)))
+        (modify ?prog6 (obrasRecomendadasDia6 $?obras6 ?nombre)
+                        (autoresCuadrosDia6 $?autores6 ?autor)
+                        (añoCuadrosDia6 $?años6 ?año)
+                        (duracionVisitaDia6 (+ ?duracionVisitaDia6 ?dur6))
+                        (tiempoCuadrosDia6 $?tiempoCuadros6 ?dur6)
+                        )
+    )
 )
 
 (defrule primerasObrasDia6MenosRelevantes
-   (declare (salience 33))
+   (declare (salience 28))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia6 $?obras6) (duracionVisitaDia6 ?duracion6) (tiempoCuadrosDia6 $?tiempos6)
                            (autoresCuadrosDia6 $?autores6) (añoCuadrosDia6 $?años6)))
@@ -1374,13 +1388,14 @@
    (ObrasRelevantesNoCompletas (nombre ?nombre6)) ;; usa las menos relevantes si no hay relevantes
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur6 (* 1.5 ?dur6)))
+    
    (assert (ObrasUsadas (nombre ?nombre6)))
    (assert (ProgramacionObras (obrasRecomendadasDia6 ?nombre6) (duracionVisitaDia6 ?dur6) (tiempoCuadrosDia6 ?dur6)
                               (autoresCuadrosDia6 ?autor6) (añoCuadrosDia6 ?año6)))
 )
 
 (defrule rellenarDia6ConMenosRelevantes
-   (declare (salience 32))
+   (declare (salience 27))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia6 $?obras6) 
@@ -1411,7 +1426,7 @@
 )
 
 (defrule primerasObrasDia6ConRelleno
-   (declare (salience 31))
+   (declare (salience 26))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia6 $?obras6) (duracionVisitaDia6 ?duracion6) (tiempoCuadrosDia6 $?tiempos6)
                            (autoresCuadrosDia6 $?autores6) (añoCuadrosDia6 $?años6) ))
@@ -1433,7 +1448,7 @@
 )
 
 (defrule rellenarDia6ConRelleno
-   (declare (salience 30))
+   (declare (salience 25))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia6 $?obras6) 
@@ -1464,7 +1479,7 @@
 )
 
 (defrule primerasObrasDia7
-   (declare (salience 29))
+   (declare (salience 24))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia7 $?obras7) (duracionVisitaDia7 ?duracion7) (tiempoCuadrosDia7 $?tiempos7)
                            (autoresCuadrosDia7 $?autores7) (añoCuadrosDia7 $?años7) ))
@@ -1487,7 +1502,7 @@
 )
 
 (defrule añadirObrasDia7
-   (declare (salience 28))
+   (declare (salience 23))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog7 <- (ProgramacionObras (obrasRecomendadasDia7 $?obras7)
@@ -1506,20 +1521,22 @@
            (duracion ?dur7)
            )
    (not (ObrasUsadas (nombre ?nombre)))
-    (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
+   (ObrasRelevantes (nombre ?nombre)) ;; usa las relevantes primero 
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.5 ?dur7)))
-   (assert (ObrasUsadas (nombre ?nombre)))
-   (modify ?prog7 (obrasRecomendadasDia7 $?obras7 ?nombre)
-                  (autoresCuadrosDia7 $?autores7 ?autor)
-                  (añoCuadrosDia7 $?años7 ?año)
-                  (duracionVisitaDia7 (+ ?duracionVisitaDia7 ?dur7))
-                  (tiempoCuadrosDia7 $?tiempoCuadros7 ?dur7)
-                  )
+    (if (<= (+ ?dur7 ?duracionVisitaDia7) ?tiempo) then
+        (assert (ObrasUsadas (nombre ?nombre)))
+        (modify ?prog7 (obrasRecomendadasDia7 $?obras7 ?nombre)
+                        (autoresCuadrosDia7 $?autores7 ?autor)
+                        (añoCuadrosDia7 $?años7 ?año)
+                        (duracionVisitaDia7 (+ ?duracionVisitaDia7 ?dur7))
+                        (tiempoCuadrosDia7 $?tiempoCuadros7 ?dur7)
+                        )
+    )
 )
 
 (defrule primerasObrasDia7MenosRelevantes
-   (declare (salience 27))
+   (declare (salience 22))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia7 $?obras7) (duracionVisitaDia7 ?duracion7) (tiempoCuadrosDia7 $?tiempos7)
                            (autoresCuadrosDia7 $?autores7) (añoCuadrosDia7 $?años7)))
@@ -1536,13 +1553,14 @@
    (ObrasRelevantesNoCompletas (nombre ?nombre7)) ;; usa las menos relevantes si no hay relevantes
    =>
     (if (neq ?tipoGrupo 1) then (bind ?dur7 (* 1.5 ?dur7)))
+    
    (assert (ObrasUsadas (nombre ?nombre7)))
    (assert (ProgramacionObras (obrasRecomendadasDia7 ?nombre7) (duracionVisitaDia7 ?dur7) (tiempoCuadrosDia7 ?dur7)
                               (autoresCuadrosDia7 ?autor7) (añoCuadrosDia7 ?año7)))
 )
 
 (defrule rellenarDia7ConMenosRelevantes
-   (declare (salience 26))
+   (declare (salience 21))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia7 $?obras7) 
@@ -1573,7 +1591,7 @@
 )
 
 (defrule primerasObrasDia7ConRelleno
-   (declare (salience 25))
+   (declare (salience 20))
    (Cliente (tipoGrupo ?tipoGrupo))
    (not (ProgramacionObras (obrasRecomendadasDia7 $?obras7) (duracionVisitaDia7 ?duracion7) (tiempoCuadrosDia7 $?tiempos7)
                            (autoresCuadrosDia7 $?autores7) (añoCuadrosDia7 $?años7) ))
@@ -1595,7 +1613,7 @@
 )
 
 (defrule rellenarDia7ConRelleno
-   (declare (salience 24))
+   (declare (salience 19))
    (Cliente (tipoGrupo ?tipoGrupo))
    (VisitanteAbstraido (diasVisita ?dias) (tiempoVisita ?tiempo))
    ?prog <- (ProgramacionObras (obrasRecomendadasDia7 $?obras7) 
@@ -1627,7 +1645,7 @@
 
 
 (defrule pasoRespuesta
-    (declare (salience 15))
+    (declare (salience 18))
     =>
     (focus RESPUESTA)
 )
