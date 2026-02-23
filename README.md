@@ -9,6 +9,8 @@ Bachelor's Degree in Computer Engineering -- FIB (UPC)
 -   Julia Gallo\
 -   Víctor Moreno Villanueva
 
+## Mark: 11/11
+
 ------------------------------------------------------------------------
 
 ## 📖 Description
